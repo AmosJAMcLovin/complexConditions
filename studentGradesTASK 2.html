@@ -1,0 +1,86 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+// Program Name: Complex Conditions
+// Program Description: Create a program for task 1 above. Ask for the student’s name, 
+// current mark and number of absences and number of late assignments. Based in the grading scheme above, 
+// calculate the students grade. Then results taken and the student’s final grade to the screen. 
+// Note - the program will continually ask for a new student name until the user tells it to quit.
+
+// Name: Amos Johnson
+
+
+        // Declare Variables
+        var BR = "<br>";
+        var boost;
+        var gradeBoost;
+        var grade;
+        var studentName;
+        var currentMark;
+        var numOfAbsences;
+        var numOfLateAssignments;
+        
+        studentName = prompt("Enter student name");
+
+        grade = prompt("Enter student's current mark");
+        grade = parseInt(grade);
+
+        numOfAbsences = prompt("Enter the student's number of absences");
+        numOfAbsences = parseInt(numOfAbsences);
+
+        numOfLateAssignments = prompt("Enter the student's number of late assignments");
+        numOfLateAssignments = parseInt(numOfLateAssignments);
+
+        studentName;
+        grade;
+        numOfAbsences;
+        numOfLateAssignments;
+
+        if (numOfAbsences == 0 && numOfLateAssignments == 0) {
+            boost = 0.05;
+        }
+            else if (numOfAbsences <=2 || numOfLateAssignments == 0) {
+            boost = 0.025;
+        }
+            else if (numOfAbsences >=4 && numOfLateAssignments >=1) {
+            boost = 0.00;
+            grade = 0;
+        }
+            else {
+            boost = 0.00;
+        } 
+
+        if (grade <=100 && grade >=80) {
+            score = "A";
+        }
+        else if (grade <=80 && grade >=70) {
+            score = "B"; 
+        }
+        else if (grade <=70 && grade >=60) {
+            score = "C";
+        }
+        else if (grade <=60 && grade >=50) {
+            score = "D";
+        }
+        else if (grade <50) {
+            score = "F";
+        }
+        else {
+            score = document.write("ERROR! Please re-read instructions and try again" + BR);
+        }
+        
+        gradeBoost = (boost * grade);
+        numGrade = parseInt(gradeBoost + grade);
+   
+        //Display Results
+        document.write("Student: " + studentName + BR);
+        document.write("Absences: " + numOfAbsences + BR);
+        document.write("Late Assignments: " + numOfLateAssignments + BR);
+        document.write("Grade Boost: " + gradeBoost + "%" + BR);
+        document.write("Grade: " + numGrade + BR);
+        document.write("Final Grade: " + score + BR); 
+        </script>
+    </body>
+</html>
